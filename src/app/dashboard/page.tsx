@@ -1,16 +1,33 @@
+"use client";
 import { PageHeader } from "@/components/page-header";
 import { StatCard } from "@/components/stat-card";
-import { SalesChart } from "@/components/sales-chart";
+import { SalesChart } from "@/components/charts/sales-chart";
 import {
   DollarSignIcon,
   TrendingUpIcon,
   UsersIcon,
   CalendarIcon,
 } from "lucide-react";
+import SalesAdditional from "@/components/charts/sales-addtionals";
 
 export default function Dashboard() {
+  const data = [
+    { name: "Jan", sales: 4000, meta: 2400 },
+    { name: "Fev", sales: 3000, meta: 2400 },
+    { name: "Mar", sales: 2000, meta: 2400 },
+    { name: "Abr", sales: 2780, meta: 2400 },
+    { name: "Mai", sales: 1890, meta: 2400 },
+    { name: "Jun", sales: 2390, meta: 2400 },
+  ];
+  const produtosData = [
+    { name: "Produto A", value: 4000 },
+    { name: "Produto B", value: 3000 },
+    { name: "Produto C", value: 2000 },
+    { name: "Produto D", value: 2780 },
+    { name: "Produto E", value: 1890 },
+  ];
   return (
-    <>
+    <div className="h-full justify-between">
       <PageHeader
         title="Dashboard"
         description="Visão geral das suas vendas e metas"
@@ -45,9 +62,10 @@ export default function Dashboard() {
           trend="neutral"
         />
       </div>
-      <div className="mt-6">
-        <SalesChart />
+      <div className="mt-6 grid gap-6 md:grid-cols-2">
+        <SalesChart data={data} />
+        <SalesAdditional data={produtosData} />
       </div>
-    </>
+    </div>
   );
 }
