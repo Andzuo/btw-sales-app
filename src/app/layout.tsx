@@ -30,7 +30,7 @@ export default function RootLayout({
           <aside className="hidden lg:flex lg:flex-col lg:w-64 lg:bg-white lg:dark:bg-gray-800">
             <SideMenu />
           </aside>
-          <main className="flex-1 overflow-y-auto">
+          <main className="flex-1 overflow-hidden">
             <div className="container mx-auto p-6">{children}</div>
           </main>
         </div>
