@@ -6,7 +6,8 @@ interface StatCardProps {
   value: string;
   description: string;
   icon: React.ElementType;
-  trend: "up" | "down" | "neutral";
+  trend?: "up" | "down" | "neutral";
+  progress?: number; // Progresso em porcentagem (0 a 100)
 }
 
 export function StatCard({
@@ -15,6 +16,7 @@ export function StatCard({
   description,
   icon: Icon,
   trend,
+  progress,
 }: StatCardProps) {
   return (
     <Card>
@@ -37,6 +39,19 @@ export function StatCard({
             {trend === "down" && "↓"}
             {trend === "neutral" && "→"} {trend === "up" ? "+" : ""}
             2.5%
+          </div>
+        )}
+        {typeof progress === "number" && (
+          <div className="mt-4">
+            <div className="relative h-2 w-full rounded-full bg-secondary">
+              <div
+                className="absolute top-0 left-0 h-2 rounded-full bg-primary"
+                style={{ width: `${progress}%` }}
+              />
+            </div>
+            <p className="mt-2 text-xs font-medium text-muted-foreground">
+              {progress}% da meta alcançada
+            </p>
           </div>
         )}
       </CardContent>

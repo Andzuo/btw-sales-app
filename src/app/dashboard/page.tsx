@@ -2,12 +2,7 @@
 import { PageHeader } from "@/components/page-header";
 import { StatCard } from "@/components/stat-card";
 import { SalesChart } from "@/components/charts/sales-chart";
-import {
-  DollarSignIcon,
-  TrendingUpIcon,
-  UsersIcon,
-  CalendarIcon,
-} from "lucide-react";
+import { DollarSignIcon, UsersIcon, CalendarIcon, Target } from "lucide-react";
 import SalesAdditional from "@/components/charts/sales-addtionals";
 
 export default function Dashboard() {
@@ -42,10 +37,10 @@ export default function Dashboard() {
         />
         <StatCard
           title="Meta Mensal"
-          value="R$ 50.000"
-          description="90,46% alcançado"
-          icon={TrendingUpIcon}
-          trend="neutral"
+          value="90.46%"
+          description="Progresso até agora"
+          icon={Target}
+          progress={90.46} // Progresso em porcentagem
         />
         <StatCard
           title="Clientes Novos"
