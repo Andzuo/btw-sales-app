@@ -1,4 +1,4 @@
-import { CalendarIcon, ChartBarIcon, CogIcon } from "lucide-react";
+import { CalendarIcon, ChartBarIcon, CogIcon, User2 } from "lucide-react";
 
 export const TabsMenu = [
   {
@@ -6,11 +6,15 @@ export const TabsMenu = [
     icon: ChartBarIcon,
   },
   {
+    name: "Clientes",
+    icon: User2,
+  },
+  {
     name: "Metas",
     icon: CalendarIcon,
   },
   {
-    name: "Configurações",
+    name: "Config",
     icon: CogIcon,
   },
 ];
